@@ -105,7 +105,7 @@ node .examples\test.js
 - **Location:** Check out the `sdk` folder, and setup the environment for running the tests. 
 - **Purpose:** Use the SmartUI SDK for comprehensive visual testing in both local and remote automation tests environments.
 - **Advantages:** Ensure consistent DOM capturing and rendering across various browsers and resolutions.
-- **More Information:** [SmartUI Selenium JavaScript SDK Documentation](https://www.lambdatest.com/support/docs/smartui-selenium-js-sdk/).
+- **More Information:** [SmartUI Selenium Ruby SDK Documentation](https://www.lambdatest.com/support/docs/smartui-selenium-ruby-sdk/).
 
 ##### Steps:
 - Install the dependencies 
