@@ -54,7 +54,7 @@ jobs:
       - name: Execute SmartUI Tests
         run: |
           cd sdk
-          npx smartui --config smartui-config.json exec -- npm run smartui-cloud
+          npx smartui --config smartui-config.json exec -P 49153 -- npm run smartui-cloud
 
       - name: Check for Visual Changes
         run: |
