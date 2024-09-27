@@ -35,8 +35,13 @@ let capabilities = {
     await driver.get("https://www.lambdatest.com/");
     await smartuiSnapshot(driver, "LT-SmartUI");
 
+  //   let options = {
+  //     element: {
+  //         xpath: '//*[@id="api-requests"]',
+  //     }
+  // };
     await driver.get("https://ipinfo.io/");
-    await smartuiSnapshot(driver, "Ticker");
+    await smartuiSnapshot(driver, "Ticker", options);
   } finally {
     await driver.quit();
   }
