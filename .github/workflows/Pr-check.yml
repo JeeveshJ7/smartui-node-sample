@@ -45,7 +45,9 @@ jobs:
 
       - name: Install SmartUI SDK
         run: |
-          npm install @lambdatest/smartui-cli
+          npm install @lambdatest/smartui-cli@latest
+          npm install @lambdatest/selenium-driver
+          npm install selenium-webdriver
 
       - name: Set up SmartUI Config
         run: |
