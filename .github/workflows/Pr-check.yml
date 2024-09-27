@@ -5,13 +5,11 @@ on:
     branches:
       - main
       - stage
-
+      - demo
 env:
   LT_USERNAME: ${{ secrets.LT_USERNAME }}
   LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
   PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
-  LT_SDK_DEBUG: true
-  SMARTUI_DEBUG: true
 
 jobs:
   smartui-pr-check:
@@ -39,29 +37,19 @@ jobs:
         with:
           node-version: '20' # Use the appropriate Node.js version for your project
 
-      - name: Install SmartUI SDK
+      - name: Install SmartUI SDK for demo
         run: |
+          cd sdk
           npm install @lambdatest/smartui-cli@latest
           npm install @lambdatest/selenium-driver
           npm install selenium-webdriver
 
       - name: Set up SmartUI Config
         run: |
+          cd sdk
           npx smartui config:create smartui-config.json
 
       - name: Execute SmartUI Tests
         run: |
-          npx smartui --config smartui-config.json exec -- npm run smartui-cloud
-        env:
-          SMARTUI_PROJECT_NAME: "your-project-name" # Replace with your SmartUI project name
-          SMARTUI_BUILD_NAME: ${{ github.sha }}
-
-      - name: Check for Visual Changes
-        run: |
-          echo "Checking for visual differences..."
-
-      - name: Comment on PR with Results
-        if: failure()
-        run: |
-          echo "Visual differences found. Please review the SmartUI report."
-          # You can add code to post this comment to the PR using GitHub API
+          cd sdk
+          npx smartui --config smartui-config.json exec -P 49153 -- npm run smartui-cloud
