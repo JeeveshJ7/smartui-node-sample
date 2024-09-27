@@ -3,7 +3,8 @@ name: SmartUI PR Check with NodeJS SDK
 on:
   pull_request:
     branches:
-      - master
+      - main
+      - stage
 
 env:
   LT_USERNAME: ${{ secrets.LT_USERNAME }}
