@@ -41,6 +41,7 @@ jobs:
 
       - name: Install SmartUI SDK
         run: |
+          cd sdk
           npm install @lambdatest/smartui-cli@latest
           npm install @lambdatest/selenium-driver
           npm install selenium-webdriver
@@ -52,9 +53,6 @@ jobs:
       - name: Execute SmartUI Tests
         run: |
           npx smartui --config smartui-config.json exec -- npm run smartui-cloud
-        env:
-          SMARTUI_PROJECT_NAME: "your-project-name" # Replace with your SmartUI project name
-          SMARTUI_BUILD_NAME: ${{ github.sha }}
 
       - name: Check for Visual Changes
         run: |
