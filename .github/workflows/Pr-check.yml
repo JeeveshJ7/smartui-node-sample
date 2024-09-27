@@ -39,10 +39,6 @@ jobs:
         with:
           node-version: '14' # Use the appropriate Node.js version for your project
 
-      - name: Install Dependencies
-        run: |
-          npm ci
-
       - name: Install SmartUI SDK
         run: |
           npm install @lambdatest/smartui-cli@latest
