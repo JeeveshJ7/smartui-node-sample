@@ -48,10 +48,12 @@ jobs:
 
       - name: Set up SmartUI Config
         run: |
+          cd sdk
           npx smartui config:create smartui-config.json
 
       - name: Execute SmartUI Tests
         run: |
+          cd sdk
           npx smartui --config smartui-config.json exec -- npm run smartui-cloud
 
       - name: Check for Visual Changes
