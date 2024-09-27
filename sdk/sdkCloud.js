@@ -41,7 +41,7 @@ let capabilities = {
   //     }
   // };
     await driver.get("https://ipinfo.io/");
-    await smartuiSnapshot(driver, "Ticker", options);
+    await smartuiSnapshot(driver, "Ticker");
   } finally {
     await driver.quit();
   }
