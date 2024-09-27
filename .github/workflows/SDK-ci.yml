@@ -33,4 +33,4 @@ jobs:
           npm i
           npx smartui --version
           npx smartui config:create smartui-web.json
-          npx smartui --config smartui-web.json exec -- npm run smartui-cloud
+          npx smartui --config smartui-web.json exec -P 49153 -- npm run smartui-cloud 
